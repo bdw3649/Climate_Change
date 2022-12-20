@@ -1,0 +1,509 @@
+Year,Type,Frequency
+1970,Drought,2
+1970,Earthquake,12
+1970,Epidemic,4
+1970,Flood,31
+1970,Landslide,6
+1970,Storm,24
+1970,Wildfire,3
+1971,Drought,6
+1971,Earthquake,6
+1971,Epidemic,2
+1971,Extreme temperature ,1
+1971,Flood,15
+1971,Landslide,5
+1971,Mass movement (dry),1
+1971,Storm,22
+1971,Volcanic activity,3
+1971,Wildfire,2
+1972,Drought,4
+1972,Earthquake,7
+1972,Epidemic,1
+1972,Extreme temperature ,2
+1972,Flood,15
+1972,Landslide,5
+1972,Storm,26
+1972,Wildfire,3
+1973,Drought,3
+1973,Earthquake,8
+1973,Extreme temperature ,3
+1973,Flood,20
+1973,Landslide,5
+1973,Storm,22
+1973,Volcanic activity,1
+1973,Wildfire,3
+1974,Drought,3
+1974,Earthquake,6
+1974,Epidemic,2
+1974,Flood,19
+1974,Insect infestation,1
+1974,Landslide,10
+1974,Storm,28
+1974,Wildfire,3
+1975,Drought,1
+1975,Earthquake,5
+1975,Epidemic,1
+1975,Extreme temperature ,3
+1975,Flood,18
+1975,Insect infestation,1
+1975,Landslide,5
+1975,Storm,28
+1975,Volcanic activity,3
+1975,Wildfire,2
+1976,Drought,10
+1976,Earthquake,21
+1976,Epidemic,3
+1976,Flood,17
+1976,Landslide,6
+1976,Storm,36
+1976,Volcanic activity,5
+1976,Wildfire,1
+1977,Drought,13
+1977,Earthquake,15
+1977,Epidemic,22
+1977,Extreme temperature ,1
+1977,Flood,48
+1977,Landslide,3
+1977,Storm,32
+1977,Volcanic activity,5
+1977,Wildfire,2
+1978,Drought,8
+1978,Earthquake,9
+1978,Epidemic,21
+1978,Extreme temperature ,1
+1978,Flood,47
+1978,Insect infestation,2
+1978,Landslide,2
+1978,Storm,42
+1978,Volcanic activity,2
+1978,Wildfire,3
+1979,Drought,11
+1979,Earthquake,23
+1979,Epidemic,3
+1979,Extreme temperature ,4
+1979,Flood,34
+1979,Insect infestation,1
+1979,Landslide,7
+1979,Storm,31
+1979,Volcanic activity,4
+1979,Wildfire,4
+1980,Drought,24
+1980,Earthquake,17
+1980,Epidemic,8
+1980,Extreme temperature ,3
+1980,Flood,39
+1980,Landslide,4
+1980,Mass movement (dry),1
+1980,Storm,42
+1980,Volcanic activity,2
+1980,Wildfire,4
+1981,Drought,18
+1981,Earthquake,15
+1981,Epidemic,5
+1981,Extreme temperature ,2
+1981,Flood,43
+1981,Landslide,8
+1981,Storm,50
+1981,Volcanic activity,1
+1981,Wildfire,4
+1982,Drought,6
+1982,Earthquake,15
+1982,Epidemic,7
+1982,Extreme temperature ,3
+1982,Flood,48
+1982,Landslide,12
+1982,Mass movement (dry),1
+1982,Storm,52
+1982,Volcanic activity,3
+1982,Wildfire,3
+1983,Drought,26
+1983,Earthquake,25
+1983,Epidemic,7
+1983,Extreme temperature ,2
+1983,Flood,49
+1983,Landslide,16
+1983,Mass movement (dry),3
+1983,Storm,59
+1983,Volcanic activity,7
+1983,Wildfire,12
+1984,Drought,6
+1984,Earthquake,13
+1984,Epidemic,12
+1984,Extreme temperature ,1
+1984,Flood,47
+1984,Landslide,6
+1984,Storm,57
+1984,Volcanic activity,7
+1984,Wildfire,7
+1985,Drought,3
+1985,Earthquake,17
+1985,Epidemic,13
+1985,Extreme temperature ,8
+1985,Flood,58
+1985,Insect infestation,2
+1985,Landslide,6
+1985,Mass movement (dry),2
+1985,Storm,51
+1985,Volcanic activity,2
+1985,Wildfire,13
+1986,Drought,4
+1986,Earthquake,21
+1986,Epidemic,11
+1986,Extreme temperature ,2
+1986,Flood,50
+1986,Insect infestation,13
+1986,Landslide,9
+1986,Storm,56
+1986,Volcanic activity,2
+1986,Wildfire,6
+1987,Drought,15
+1987,Earthquake,15
+1987,Epidemic,25
+1987,Extreme temperature ,6
+1987,Flood,68
+1987,Insect infestation,15
+1987,Landslide,13
+1987,Mass movement (dry),2
+1987,Storm,58
+1987,Volcanic activity,2
+1987,Wildfire,8
+1988,Drought,17
+1988,Earthquake,15
+1988,Epidemic,20
+1988,Extreme temperature ,6
+1988,Flood,76
+1988,Insect infestation,17
+1988,Landslide,15
+1988,Mass movement (dry),3
+1988,Storm,60
+1988,Volcanic activity,5
+1989,Drought,7
+1989,Earthquake,19
+1989,Epidemic,16
+1989,Extreme temperature ,5
+1989,Flood,46
+1989,Insect infestation,1
+1989,Landslide,15
+1989,Mass movement (dry),3
+1989,Storm,73
+1989,Volcanic activity,1
+1989,Wildfire,3
+1990,Drought,20
+1990,Earthquake,42
+1990,Epidemic,18
+1990,Extreme temperature ,13
+1990,Flood,60
+1990,Landslide,5
+1990,Mass movement (dry),2
+1990,Storm,137
+1990,Volcanic activity,2
+1990,Wildfire,4
+1991,Drought,12
+1991,Earthquake,29
+1991,Epidemic,43
+1991,Extreme temperature ,8
+1991,Flood,77
+1991,Insect infestation,1
+1991,Landslide,9
+1991,Mass movement (dry),3
+1991,Storm,66
+1991,Volcanic activity,10
+1991,Wildfire,8
+1992,Drought,11
+1992,Earthquake,25
+1992,Epidemic,28
+1992,Extreme temperature ,7
+1992,Flood,59
+1992,Insect infestation,1
+1992,Landslide,8
+1992,Mass movement (dry),4
+1992,Storm,76
+1992,Volcanic activity,5
+1992,Wildfire,8
+1993,Drought,9
+1993,Earthquake,20
+1993,Epidemic,4
+1993,Extreme temperature ,4
+1993,Flood,84
+1993,Insect infestation,3
+1993,Landslide,24
+1993,Mass movement (dry),3
+1993,Storm,108
+1993,Volcanic activity,6
+1993,Wildfire,2
+1994,Drought,12
+1994,Earthquake,25
+1994,Epidemic,10
+1994,Extreme temperature ,9
+1994,Flood,88
+1994,Landslide,11
+1994,Storm,81
+1994,Volcanic activity,6
+1994,Wildfire,13
+1995,Drought,6
+1995,Earthquake,26
+1995,Epidemic,25
+1995,Extreme temperature ,13
+1995,Flood,94
+1995,Insect infestation,4
+1995,Landslide,16
+1995,Storm,81
+1995,Volcanic activity,5
+1995,Wildfire,7
+1996,Drought,7
+1996,Earthquake,13
+1996,Epidemic,45
+1996,Extreme temperature ,5
+1996,Flood,92
+1996,Landslide,24
+1996,Storm,77
+1996,Volcanic activity,5
+1996,Wildfire,5
+1997,Drought,17
+1997,Earthquake,23
+1997,Epidemic,62
+1997,Extreme temperature ,13
+1997,Flood,95
+1997,Insect infestation,1
+1997,Landslide,13
+1997,Storm,79
+1997,Volcanic activity,4
+1997,Wildfire,16
+1998,Drought,20
+1998,Earthquake,30
+1998,Epidemic,74
+1998,Extreme temperature ,12
+1998,Flood,94
+1998,Insect infestation,1
+1998,Landslide,22
+1998,Storm,88
+1998,Volcanic activity,4
+1998,Wildfire,18
+1999,Drought,26
+1999,Earthquake,33
+1999,Epidemic,76
+1999,Extreme temperature ,8
+1999,Flood,122
+1999,Landslide,18
+1999,Storm,106
+1999,Volcanic activity,5
+1999,Wildfire,22
+2000,Drought,25
+2000,Earthquake,30
+2000,Epidemic,113
+2000,Extreme temperature ,30
+2000,Flood,157
+2000,Insect infestation,2
+2000,Landslide,28
+2000,Mass movement (dry),1
+2000,Storm,102
+2000,Volcanic activity,5
+2000,Wildfire,30
+2001,Drought,22
+2001,Earthquake,25
+2001,Epidemic,69
+2001,Extreme temperature ,23
+2001,Flood,157
+2001,Insect infestation,2
+2001,Landslide,24
+2001,Storm,105
+2001,Volcanic activity,6
+2001,Wildfire,14
+2002,Drought,24
+2002,Earthquake,37
+2002,Epidemic,112
+2002,Extreme temperature ,15
+2002,Flood,172
+2002,Landslide,20
+2002,Mass movement (dry),1
+2002,Storm,122
+2002,Volcanic activity,7
+2002,Wildfire,22
+2003,Drought,14
+2003,Earthquake,40
+2003,Epidemic,32
+2003,Extreme temperature ,25
+2003,Flood,158
+2003,Landslide,21
+2003,Storm,86
+2003,Volcanic activity,2
+2003,Wildfire,14
+2004,Drought,11
+2004,Earthquake,42
+2004,Epidemic,43
+2004,Extreme temperature ,16
+2004,Flood,128
+2004,Insect infestation,12
+2004,Landslide,15
+2004,Mass movement (dry),1
+2004,Storm,124
+2004,Volcanic activity,5
+2004,Wildfire,8
+2005,Drought,20
+2005,Earthquake,25
+2005,Epidemic,56
+2005,Extreme temperature ,40
+2005,Flood,193
+2005,Landslide,13
+2005,Storm,130
+2005,Volcanic activity,8
+2005,Wildfire,13
+2006,Drought,9
+2006,Earthquake,24
+2006,Epidemic,54
+2006,Extreme temperature ,14
+2006,Flood,226
+2006,Insect infestation,1
+2006,Landslide,20
+2006,Mass movement (dry),1
+2006,Storm,76
+2006,Volcanic activity,12
+2006,Wildfire,9
+2007,Drought,11
+2007,Earthquake,21
+2007,Epidemic,35
+2007,Extreme temperature ,25
+2007,Flood,218
+2007,Landslide,10
+2007,Storm,105
+2007,Volcanic activity,6
+2007,Wildfire,18
+2008,Drought,16
+2008,Earthquake,23
+2008,Epidemic,42
+2008,Extreme temperature ,16
+2008,Flood,165
+2008,Landslide,12
+2008,Mass movement (dry),3
+2008,Storm,111
+2008,Volcanic activity,7
+2008,Wildfire,5
+2009,Drought,18
+2009,Earthquake,22
+2009,Epidemic,44
+2009,Extreme temperature ,20
+2009,Flood,151
+2009,Insect infestation,1
+2009,Landslide,29
+2009,Mass movement (dry),1
+2009,Storm,87
+2009,Volcanic activity,2
+2009,Wildfire,9
+2010,Drought,21
+2010,Earthquake,24
+2010,Epidemic,44
+2010,Extreme temperature ,28
+2010,Flood,184
+2010,Insect infestation,1
+2010,Landslide,32
+2010,Storm,94
+2010,Volcanic activity,6
+2010,Wildfire,7
+2011,Drought,16
+2011,Earthquake,30
+2011,Epidemic,24
+2011,Extreme temperature ,16
+2011,Flood,156
+2011,Landslide,17
+2011,Storm,84
+2011,Volcanic activity,6
+2011,Wildfire,8
+2012,Drought,18
+2012,Earthquake,27
+2012,Epidemic,25
+2012,Extreme temperature ,52
+2012,Flood,136
+2012,Landslide,13
+2012,Mass movement (dry),1
+2012,Storm,91
+2012,Volcanic activity,1
+2012,Wildfire,6
+2013,Drought,9
+2013,Earthquake,29
+2013,Epidemic,23
+2013,Extreme temperature ,13
+2013,Flood,148
+2013,Impact,1
+2013,Landslide,11
+2013,Mass movement (dry),1
+2013,Storm,105
+2013,Volcanic activity,3
+2013,Wildfire,10
+2014,Animal accident,1
+2014,Drought,20
+2014,Earthquake,26
+2014,Epidemic,23
+2014,Extreme temperature ,17
+2014,Flood,137
+2014,Landslide,15
+2014,Storm,99
+2014,Volcanic activity,6
+2014,Wildfire,4
+2015,Drought,27
+2015,Earthquake,23
+2015,Epidemic,14
+2015,Extreme temperature ,12
+2015,Flood,161
+2015,Landslide,20
+2015,Mass movement (dry),1
+2015,Storm,121
+2015,Volcanic activity,6
+2015,Wildfire,13
+2016,Drought,14
+2016,Earthquake,30
+2016,Epidemic,25
+2016,Extreme temperature ,12
+2016,Flood,160
+2016,Landslide,13
+2016,Storm,86
+2016,Wildfire,10
+2017,Drought,12
+2017,Earthquake,22
+2017,Epidemic,27
+2017,Extreme temperature ,10
+2017,Flood,127
+2017,Landslide,25
+2017,Mass movement (dry),1
+2017,Storm,130
+2017,Volcanic activity,2
+2017,Wildfire,15
+2018,Drought,17
+2018,Earthquake,20
+2018,Epidemic,16
+2018,Extreme temperature ,27
+2018,Flood,128
+2018,Landslide,13
+2018,Mass movement (dry),1
+2018,Storm,97
+2018,Volcanic activity,9
+2018,Wildfire,10
+2019,Drought,15
+2019,Earthquake,32
+2019,Epidemic,36
+2019,Extreme temperature ,21
+2019,Flood,196
+2019,Insect infestation,8
+2019,Landslide,25
+2019,Storm,91
+2019,Volcanic activity,4
+2019,Wildfire,14
+2020,Drought,9
+2020,Earthquake,16
+2020,Epidemic,6
+2020,Extreme temperature ,5
+2020,Flood,201
+2020,Insect infestation,2
+2020,Landslide,19
+2020,Storm,128
+2020,Volcanic activity,4
+2020,Wildfire,8
+2021,Drought,10
+2021,Earthquake,19
+2021,Epidemic,5
+2021,Extreme temperature ,2
+2021,Flood,160
+2021,Glacial lake outburst,2
+2021,Landslide,10
+2021,Storm,83
+2021,Volcanic activity,8
+2021,Wildfire,16

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="https://unpkg.com/chartjs-chart-geo@3.5.2/build/index.umd.min.js"></script>
+
+    <title>WarmingChart</title>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo_content">
+            <div class="link">
+                <div class="logo">
+                    <i class='bx bx-line-chart'></i>
+                    <div class="logo_name">WarmingChart</div>
+                </div>
+            </div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav_list">
+            <li>
+                <div class="icon-link">
+                    <a href="#">
+                        <i class='bx bxs-thermometer'></i>
+                        <span class="links_name">Temperature</span>
+                    </a>
+                    <i class='bx bx-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li class="link_name">Temperature</li>
+                    <li><a class="link" href="#">line-chart</a></li>
+                    <li><a class="link" href="#">map-chart</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="link" href="#">
+                    <i class='bx bx-water'></i>
+                    <span class="links_name">SeaLevel</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li class="link_name">SeaLevel</li>
+                </ul>
+            </li>
+            <li>
+                <div class="icon-link">
+                    <a href="#">
+                        <i class='bx bxs-skull'></i>
+                        <span class="links_name">Disaster</span>
+                    </a>
+                    <i class='bx bx-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li class="link_name">Disaster</li>
+                    <li><a class="link" href="#">pie-chart</a></li>
+                    <li><a class="link" href="#">line-chart</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="link" href="#">
+                    <i class='bx bx-cloud'></i>
+                    <span class="links_name">GreenHouseGas</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#">GreenHouseGas</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="main on">
+            <nav class="banner">
+                <nav></nav>
+                <img src="background.jpg" class="banner_img">
+                <span style="margin-top: 20px;" class="banner_content">
+                    <h1>Global Warming</h1>
+                    <p style="margin-top: 20px;">지구온난화가 끼치는 영향을 6가지 차트를 통해 분석해보자.</p>
+                </span>
+            </nav>
+        </div>
+        <div><canvas id="chart_line1"></canvas></div>
+        <div><canvas id="chart_map"></canvas></div>
+        <div><canvas id="chart_bar"></canvas></div>
+        <div><canvas id="chart_pie"></canvas></div>
+        <div><canvas id="chart_line2"></canvas></div>
+        <div><canvas id="chart_line3"></canvas></div>
+    </div>
+
+    <script>
+        let arrow = document.querySelectorAll(".arrow");
+        for(var i = 0; i < arrow.length; i++) {
+            arrow[i].addEventListener("click", (e) => {
+                let arrowParent = e.target.parentElement.parentElement;
+                console.log(arrowParent);
+                arrowParent.classList.toggle("showMenu");
+            });
+        }
+        let btn = document.querySelector("#btn");
+        let sidebar = document.querySelector(".sidebar");
+        btn.onclick = function() {
+            sidebar.classList.toggle("close");
+        }
+        let tmp = document.querySelectorAll(".link");
+        let div = document.querySelectorAll(".content div");
+        for(let i = 0; i < tmp.length; i++) {
+            tmp[i].addEventListener("click", (e) => {
+                e.preventDefault();
+                for(let j of div) j.classList.remove("on");
+                div[i].classList.add("on");
+            });
+        }
+    </script>
+
+    <script>
+
+        d3.csv('./data/GlobalTemperaturesByYear.csv').then(makeChart1);
+        function makeChart1(csvdata) {
+            const label = csvdata.map(d => d.year);
+            const data = csvdata.map(d => d.AverageTemperature);
+            const ctx = document.getElementById('chart_line1').getContext('2d');
+            const gradient1 = ctx.createLinearGradient(0, 0, 0, 400);
+            gradient1.addColorStop(0, 'rgba(255, 0, 0, 1)');
+            gradient1.addColorStop(1, 'rgba(255, 255, 0, 1)');
+            const gradient2 = ctx.createLinearGradient(0, 0, 0, 400);
+            gradient2.addColorStop(0, 'rgba(255, 0, 0, 0.7)');
+            gradient2.addColorStop(1, 'rgba(255, 255, 0, 0.7)');
+            const chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: label,
+                    datasets: [
+                        {
+                            label: '표면온도',
+                            data: data,
+                            borderColor: gradient1,
+                            backgroundColor: gradient2,
+                            pointRadius: 0,
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            text: '연도별 지구표면온도'
+                        }
+                    },
+                },
+            });
+        }
+
+        d3.csv('./data/GlobalTemperaturesByCountry.csv').then(makeChart2);
+        function makeChart2(csvdata) {
+            const url = "https://unpkg.com/world-atlas@2.0.2/countries-50m.json";
+            fetch(url).then(result => result.json()).then((datapoint) => {
+                const countries = ChartGeo.topojson.feature(datapoint, datapoint.objects.countries).features;
+                const countrylist = countries.map(country => country.properties.name);
+                const m = new Map();
+                for(let i of countrylist) {
+                    let t = 0;
+                    for(let j of csvdata) {
+                        if(i == j.Country) {
+                            t = i;
+                            m.set(i, Math.round(j.AverageTemperature * 1000) / 1000);
+                        }
+                    }
+                    if(t === 0) m.set(i, 0);
+                }
+                const data = {
+                    labels: countrylist,
+                    datasets: [
+                        {
+                            label: '국가',
+                            data: countries.map(country => ({ feature: country, value: m.get(country.properties.name) }))
+                        }
+                    ]
+                };
+                const ctx = document.getElementById('chart_map');
+                const chart = new Chart(ctx, {
+                    type: 'choropleth',
+                    data,
+                    options: {
+                        showOutline: true, //지구본 원형라인 잡아주기
+                        showGraticule: true, //지구본 위, 경도선 그려주기
+                        scales: {
+                            xy: {
+                                projection: 'equalEarth' //지구본 모양으로 변경
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false //chart.js차트 범례 숨기기(별도 표기가 됨)
+                            },
+                            title: {
+                            display: true,
+                            text: '나라별 표면온도 변화량'
+                        }
+                        }
+                    }
+                });
+            });
+        }
+
+
+        d3.csv('./data/Sealevel_Year.csv').then(makeChart3);
+        function makeChart3(csvdata) {
+            const label = csvdata.map(d => d.year);
+            const data = csvdata.map(d => d.sealevel);
+            const ctx = document.getElementById('chart_bar').getContext('2d');
+            const gradient1 = ctx.createLinearGradient(0, 0, 0, 400);
+            gradient1.addColorStop(0, 'rgba(224, 255, 255, 1)');
+            gradient1.addColorStop(1, 'rgba(0, 0, 255, 1)');
+            const gradient2 = ctx.createLinearGradient(0, 0, 0, 400);
+            gradient2.addColorStop(0, 'rgba(224, 255, 255, 0.8)');
+            gradient2.addColorStop(1, 'rgba(0, 0, 255, 0.8)');
+            const chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: label,
+                    datasets: [
+                        {
+                            label: '해수면 변화량',
+                            data: data,
+                            borderColor: gradient1,
+                            backgroundColor: gradient2,
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                filter: function (label) {
+                                    if (label.text === '해수면 변화량') return true;
+                                }
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: '연도별 해수면 변화량'
+                        }
+                    },
+                },
+            });
+        }
+
+
+        d3.csv('./data/Disaster_Type.csv').then(makeChart4);
+        function makeChart4(csvdata) {
+            const label = csvdata.map(d => d.Type);
+            const data = csvdata.map(d => d.Frequency);
+            const ctx = document.getElementById('chart_pie');
+            const chart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: label,
+                    datasets: [
+                        {
+                            data: data,
+                            backgroundColor: [
+                                'rgba(33, 146, 255, 0.8)',
+                                'rgba(253, 255, 0, 0.8)',
+                                'rgba(92, 46, 126, 0.8)',
+                                'rgba(86, 43, 8, 0.8)',
+                                'rgba(54, 126, 24, 0.8)',
+                                'rgba(215, 192, 174, 0.8)',
+                                'rgba(37, 109, 133, 0.8)',
+                                'rgba(224, 0, 26, 0.8)',
+                                'rgba(129, 50, 50, 0.8)',
+                                'rgba(128, 128, 128, 0.8)'
+                            ]
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            text: '자연재해 발생 비율'
+                        }
+                    },
+                },
+            });
+        }
+
+        d3.csv('./data/Disaster_Year.csv').then(makeChart5);
+        function makeChart5(csvdata) {
+            const label = Array.from(new Set(csvdata.map(d => d.Year)));
+            function data(str) {
+                const d = csvdata.map(function (d) {
+                    if (d.Type == str) return d.Frequency;
+                    else return 2e9;
+                });
+                return d.filter(x => x < 2e9);
+            }
+            const ctx = document.getElementById('chart_line2');
+            const chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: label,
+                    datasets: [
+                        {
+                            label: '홍수',
+                            data: data('Flood'),
+                            borderColor: 'rgba(33, 146, 255, 1)',
+                            backgroundColor: 'rgba(33, 146, 255, 0.5)',
+                            pointRadius: 0,
+                        },
+                        {
+                            label: '태풍',
+                            data: data('Storm'),
+                            borderColor: 'rgba(253, 255, 0, 1)',
+                            backgroundColor: 'rgba(253, 255, 0, 0.5)',
+                            pointRadius: 0,
+                        },
+                        {
+                            label: '가뭄',
+                            data: data('Drought'),
+                            borderColor: 'rgba(215, 192, 174, 1)',
+                            backgroundColor: 'rgba(215, 192, 174, 0.5)',
+                            pointRadius: 0,
+                        },
+                        {
+                            label: '지진',
+                            data: data('Earthquake'),
+                            borderColor: 'rgba(86, 43, 8, 1)',
+                            backgroundColor: 'rgba(86, 43, 8, 0.5)',
+                            pointRadius: 0,
+                        },
+                        {
+                            label: '산사태',
+                            data: data('Landslide'),
+                            borderColor: 'rgba(54, 126, 24, 1)',
+                            backgroundColor: 'rgba(54, 126, 24, 0.5)',
+                            pointRadius: 0,
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            text: '연도별 자연재해 발생횟수'
+                        }
+                    },
+                },
+            });
+        }
+
+        d3.csv('./data/Greenhouse_Gas_Year.csv').then(makeChart6);
+        function makeChart6(csvdata) {
+            const label = Array.from(new Set(csvdata.map(d => d.year)));
+            function data(str) {
+                const d = csvdata.map(function (d) {
+                    if (d.category == str) return d.value;
+                    else return 2e9;
+                });
+                const a = d.filter(x => x < 2e9);
+                const m = Math.max(...a);
+                const b = a.map(x => x / m * 100);
+                return b;
+            }
+            // const randomColor = function (t) {
+            //     var r = Math.floor(Math.random() * 255);
+            //     var g = Math.floor(Math.random() * 255);
+            //     var b = Math.floor(Math.random() * 255);
+            //     return "rgba(" + r + "," + g + "," + b + "," + t + ")";
+            // };
+            const ctx = document.getElementById('chart_line3');
+            const chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: label,
+                    datasets: [
+                        {
+                            label: '이산화탄소(CO2)',
+                            data: data('CO2'),
+                            borderColor: 'rgba(255, 102, 99, 1)',
+                            backgroundColor: 'rgba(255, 102, 99, 0.5)',
+                        },
+                        {
+                            label: '메탄(CH4)',
+                            data: data('CH4'),
+                            borderColor: 'rgba(254, 177, 68, 1)',
+                            backgroundColor: 'rgba(254, 177, 68, 0.5)',
+                        },
+                        {
+                            label: '아산화질소(N2O)',
+                            data: data('N2O'),
+                            borderColor: 'rgba(253, 253, 151, 1)',
+                            backgroundColor: 'rgba(253, 253, 151, 0.5)',
+                        },
+                        {
+                            label: '수소불화탄소(HFCs)',
+                            data: data('HFCs'),
+                            borderColor: 'rgba(158, 224, 158, 1)',
+                            backgroundColor: 'rgba(158, 224, 158, 0.5)',
+                        },
+                        {
+                            label: '과불화탄소(PFCs)',
+                            data: data('PFCs'),
+                            borderColor: 'rgba(158, 193, 207, 1)',
+                            backgroundColor: 'rgba(158, 193, 207, 0.5)',
+                        },
+                        {
+                            label: '육불화황(SF6)',
+                            data: data('SF6'),
+                            borderColor: 'rgba(204, 153, 201, 1)',
+                            backgroundColor: 'rgba(204, 153, 201, 0.5)',
+                        },
+                        // {
+                        //     label: '삼불화질소(NF3)',
+                        //     data: data('NF3'),
+                        //     borderColor: 'rgba(182, 226, 161, 1)',
+                        //     backgroundColor: 'rgba(182, 226, 161, 0.5)',
+                        // },
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            text: '연도별 온실가스 변화'
+                        }
+                    },
+                    // scales: {
+                    //     y: {
+                    //         stacked: true,
+                    //     }
+                    // }
+                },
+            });
+        }
+    </script>
+</body>
+
+</html>
